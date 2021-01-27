@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>>All resources</web-resource-name>
+            <description>Protects all resources</description>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>foo</role-name>
+            <role-name>bar</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+
+    </security-constraint>
+
+    <security-role>
+        <description>Role required to log in to the Application</description>
+        <role-name>foo</role-name>
+    </security-role>
+
+    <security-role>
+        <role-name>bar</role-name>
+    </security-role>
+    <!--
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+
+
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+    -->
+
+</web-app>
